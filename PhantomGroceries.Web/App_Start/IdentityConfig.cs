@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using PhantomGroceries.Web.Models;
+using PhantomGroceries.Domain.Models;
+using PhantomPurchases.Data;
 
 namespace PhantomGroceries.Web
 {
