@@ -1,4 +1,4 @@
-# PhantomGroceries
+# GroceryMinder
 
 ## Status
 
