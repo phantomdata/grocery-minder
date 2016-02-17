@@ -21,18 +21,20 @@ namespace PhantomGroceries.Web.Controllers
 
         public ActionResult Create()
         {
-            var groceryItem = new GroceryItem();
-            return View(groceryItem);
+            var vm = new Models.GroceryItems.CreateViewModel();
+            return View(vm);
         }
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Models.GroceryItems.CreateViewModel vm)
         {
-            var groceryItem = MapGroceryItem(collection);
-            groceryItem.ApplicationUserId = User.Identity.GetUserId();
+            if (ModelState.IsValid == false) return View(vm);
 
-            groceryItemService.Create(groceryItem);
-            // TODO: Add validation.  Ops.
+            var item = vm.ToGroceryItem();
+            item.ApplicationUserId = User.Identity.GetUserId();
+
+            groceryItemService.Create(item);
+
             return RedirectToAction("Index");
         }
 
@@ -42,26 +44,33 @@ namespace PhantomGroceries.Web.Controllers
             return View(groceryItems.ToList());
         }
 
-        [HttpPost]
-        public ActionResult Update(FormCollection collection)
+        public ActionResult Update(int id)
         {
-            var id = Convert.ToInt32(collection["GroceryItemId"]);
+            var item = groceryItemService.Get(User.Identity.GetUserId(), id);
+            if (item == null) return HttpNotFound();
+
+            var vm = new Models.GroceryItems.UpdateViewModel(item);
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Models.GroceryItems.UpdateViewModel vm)
+        {
+            if (ModelState.IsValid == false)
+            {
+                return View(vm);
+            }
+
+            var id = Convert.ToInt32(vm.GroceryItemId);
             var toUpdate = groceryItemService.Get(User.Identity.GetUserId(), id);
             if (toUpdate == null) return HttpNotFound();
 
-            var mapped = MapGroceryItem(collection, toUpdate);
+            var updated = vm.UpdatedGroceryItem(toUpdate);
 
-            groceryItemService.Update(mapped);
+            groceryItemService.Update(updated);
 
             return RedirectToAction("Index");
-        }
-
-        public ActionResult Update(int id)
-        {
-            var groceryItem = groceryItemService.Get(User.Identity.GetUserId(), id);
-            if (groceryItem == null) return HttpNotFound();
-
-            return View(groceryItem);
         }
 
         private GroceryItem MapGroceryItem(FormCollection collection)
