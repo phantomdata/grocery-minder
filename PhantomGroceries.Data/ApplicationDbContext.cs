@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using PhantomGroceries.Data.Configurations;
 using PhantomGroceries.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -28,7 +27,6 @@ namespace PhantomPurchases.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Configurations.Add(new GroceryItemConfiguration());
         }
 
         public static ApplicationDbContext Create()

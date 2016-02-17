@@ -13,7 +13,7 @@ namespace PhantomGroceries.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201602170221292_Initial Migration"; }
+            get { return "201602170420226_Initial Migration"; }
         }
         
         string IMigrationMetadata.Source

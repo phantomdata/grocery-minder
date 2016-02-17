@@ -10,6 +10,7 @@ namespace PhantomGroceries.Service.Services
 {
     public interface IGroceryItemService
     {
+        void Create(GroceryItem groceryItem);
         IEnumerable<GroceryItem> GetAll(string userId);
     }
     public class GroceryItemService : IGroceryItemService
@@ -19,6 +20,12 @@ namespace PhantomGroceries.Service.Services
         public GroceryItemService(IGroceryItemRepository groceryItemRepository)
         {
             this.groceryItemRepository = groceryItemRepository;
+        }
+
+        public void Create(GroceryItem groceryItem)
+        {
+            groceryItemRepository.Add(groceryItem);
+            return;
         }
 
         public IEnumerable<GroceryItem> GetAll(string userId)
