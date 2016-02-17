@@ -3,13 +3,13 @@ using PhantomGroceries.Domain.Models;
 
 namespace PhantomGroceries.Data.Repositories
 {
-    public class RecurringPurchaseRepository : RepositoryBase<GroceryItem>, IRecurringPurchaseRepository
+    public class GroceryItemRepository : RepositoryBase<GroceryItem>, IGroceryItemRepository
     {
-        public RecurringPurchaseRepository(IDbFactory dbFactory) : base(dbFactory)
+        public GroceryItemRepository(IDbFactory dbFactory) : base(dbFactory)
         { }
     }
 
-    public interface IRecurringPurchaseRepository : IRepository<GroceryItem>
+    public interface IGroceryItemRepository : IRepository<GroceryItem>
     {
 
     }
