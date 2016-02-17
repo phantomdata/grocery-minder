@@ -247,6 +247,7 @@
     <Content Include="Views\GroceryItems\Index.cshtml" />
     <Content Include="Views\GroceryItems\Create.cshtml" />
     <Content Include="Views\GroceryItems\_Form.cshtml" />
+    <Content Include="Views\GroceryItems\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

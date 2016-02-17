@@ -32,7 +32,7 @@ namespace PhantomGroceries.Web.Controllers
             groceryItem.ApplicationUserId = User.Identity.GetUserId();
 
             groceryItemService.Create(groceryItem);
-
+            // TODO: Add validation.  Ops.
             return RedirectToAction("Index");
         }
 
@@ -42,13 +42,41 @@ namespace PhantomGroceries.Web.Controllers
             return View(groceryItems.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Update(FormCollection collection)
+        {
+            var id = Convert.ToInt32(collection["GroceryItemId"]);
+            var toUpdate = groceryItemService.Get(User.Identity.GetUserId(), id);
+            if (toUpdate == null) return HttpNotFound();
+
+            var mapped = MapGroceryItem(collection, toUpdate);
+
+            groceryItemService.Update(mapped);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Update(int id)
+        {
+            var groceryItem = groceryItemService.Get(User.Identity.GetUserId(), id);
+            if (groceryItem == null) return HttpNotFound();
+
+            return View(groceryItem);
+        }
+
         private GroceryItem MapGroceryItem(FormCollection collection)
         {
-            var groceryItem = new GroceryItem() {
+            var item = new GroceryItem() {
                 Name = collection["Name"]
             };
 
-            return groceryItem;
+            return item;
+        }
+        private GroceryItem MapGroceryItem(FormCollection collection, GroceryItem item)
+        {
+            item.Name = collection["Name"];
+
+            return item;
         }
     }
 }
