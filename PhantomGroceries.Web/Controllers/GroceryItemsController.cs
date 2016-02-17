@@ -26,6 +26,17 @@ namespace PhantomGroceries.Web.Controllers
         }
 
         [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var item = groceryItemService.Get(User.Identity.GetUserId(), id);
+            if (item == null) return HttpNotFound();
+
+            groceryItemService.Delete(item);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public ActionResult Create(Models.GroceryItems.CreateViewModel vm)
         {
             if (ModelState.IsValid == false) return View(vm);
@@ -71,21 +82,6 @@ namespace PhantomGroceries.Web.Controllers
             groceryItemService.Update(updated);
 
             return RedirectToAction("Index");
-        }
-
-        private GroceryItem MapGroceryItem(FormCollection collection)
-        {
-            var item = new GroceryItem() {
-                Name = collection["Name"]
-            };
-
-            return item;
-        }
-        private GroceryItem MapGroceryItem(FormCollection collection, GroceryItem item)
-        {
-            item.Name = collection["Name"];
-
-            return item;
         }
     }
 }

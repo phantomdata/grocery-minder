@@ -11,6 +11,7 @@ namespace PhantomGroceries.Service.Services
     public interface IGroceryItemService
     {
         void Create(GroceryItem groceryItem);
+        void Delete(GroceryItem item);
         GroceryItem Get(string userId, int groceryItemId);
         IEnumerable<GroceryItem> GetAll(string userId);
         void Update(GroceryItem groceryItem);
@@ -29,6 +30,12 @@ namespace PhantomGroceries.Service.Services
             groceryItemRepository.Add(groceryItem);
             groceryItemRepository.Commit();
             return;
+        }
+
+        public void Delete(GroceryItem item)
+        {
+            groceryItemRepository.Delete(item);
+            groceryItemRepository.Commit();
         }
 
         public GroceryItem Get(string userId, int groceryItemId)

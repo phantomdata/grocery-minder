@@ -20,6 +20,7 @@
                 <td>@groceryItem.Name</td>
                 <td>
                     @Html.ActionLink("Update", "Update", new { id = groceryItem.GroceryItemId}, new { @class = "btn btn-default"})
+                    @Html.ActionLink("Delete", "Delete", new { id = groceryItem.GroceryItemId }, new { @class = "btn btn-default delete" })
                 </td>
             </tr>
         }

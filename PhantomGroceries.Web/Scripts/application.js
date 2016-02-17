@@ -57,3 +57,26 @@ var page = function () {
         }
     });
 }();
+
+// Nasty solution to allow delete links to work.  Seriously .NET, its 2016.
+// Get with the program.
+
+$(function() {
+    $('a.delete').click(function() {
+        if (confirm("Are you sure you want to delete that?") == false) {
+            return false;
+        }
+
+        var $this = $(this);
+
+        $.ajax({
+            type: "POST", // Really?  .NET doesn't even support DELETE
+            url: $this.attr("href"),
+            success: function () { location.reload(); },
+            error: function (data) { console.log(data); alert("Something went wrong while we tried to do that."); }
+        });
+
+        $this.remove(); // Prevent extra clicks.
+        return false;
+    });
+});
