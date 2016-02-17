@@ -26,17 +26,6 @@ namespace PhantomGroceries.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id)
-        {
-            var item = groceryItemService.Get(User.Identity.GetUserId(), id);
-            if (item == null) return HttpNotFound();
-
-            groceryItemService.Delete(item);
-
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
         public ActionResult Create(Models.GroceryItems.CreateViewModel vm)
         {
             if (ModelState.IsValid == false) return View(vm);
@@ -45,6 +34,21 @@ namespace PhantomGroceries.Web.Controllers
             item.ApplicationUserId = User.Identity.GetUserId();
 
             groceryItemService.Create(item);
+
+            TempData["SuccessMessage"] = "Successfully created the item.";
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var item = groceryItemService.Get(User.Identity.GetUserId(), id);
+            if (item == null) return HttpNotFound();
+
+            groceryItemService.Delete(item);
+
+            TempData["SuccessMessage"] = "Successfully deleted the item.";
 
             return RedirectToAction("Index");
         }
@@ -80,6 +84,8 @@ namespace PhantomGroceries.Web.Controllers
             var updated = vm.UpdatedGroceryItem(toUpdate);
 
             groceryItemService.Update(updated);
+
+            TempData["SuccessMessage"] = "Successfully updated item.";
 
             return RedirectToAction("Index");
         }

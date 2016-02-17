@@ -28,6 +28,13 @@
         </div>
     </div>
     <div class="container body-content">
+        @if (!string.IsNullOrEmpty((TempData["SuccessMessage"] as String)))
+        {
+            <div class="alert alert-success">
+                <p>@TempData["SuccessMessage"]</p>
+            </div>
+        }
+
         @RenderBody()
         <hr />
         <footer>
