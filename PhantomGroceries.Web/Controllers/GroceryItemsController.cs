@@ -1,4 +1,5 @@
-﻿using PhantomGroceries.Domain.Models;
+﻿using Microsoft.AspNet.Identity;
+using PhantomGroceries.Domain.Models;
 using PhantomGroceries.Service.Services;
 using System;
 using System.Collections.Generic;
@@ -28,14 +29,17 @@ namespace PhantomGroceries.Web.Controllers
         public ActionResult Create(FormCollection collection)
         {
             var groceryItem = MapGroceryItem(collection);
+            groceryItem.ApplicationUserId = User.Identity.GetUserId();
+
+            groceryItemService.Create(groceryItem);
 
             return RedirectToAction("Index");
         }
 
         public ActionResult Index()
         {
-            var groceryItems = groceryItemService.GetAll("test");
-            return View();
+            var groceryItems = groceryItemService.GetAll(User.Identity.GetUserId());
+            return View(groceryItems.ToList());
         }
 
         private GroceryItem MapGroceryItem(FormCollection collection)

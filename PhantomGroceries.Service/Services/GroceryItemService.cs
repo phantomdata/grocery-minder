@@ -25,12 +25,13 @@ namespace PhantomGroceries.Service.Services
         public void Create(GroceryItem groceryItem)
         {
             groceryItemRepository.Add(groceryItem);
+            groceryItemRepository.Commit();
             return;
         }
 
         public IEnumerable<GroceryItem> GetAll(string userId)
         {
-            var ret = groceryItemRepository.GetAll();
+            var ret = groceryItemRepository.GetAll().Where(x => x.ApplicationUserId == userId);
 
             return ret;
         }

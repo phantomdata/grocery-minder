@@ -7,13 +7,13 @@ namespace PhantomGroceries.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class Initialmigrationafterresetofidcasings : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initialmigrationafterresetofidcasings));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602170420226_Initial Migration"; }
+            get { return "201602170522208_Initial migration after reset of id casings"; }
         }
         
         string IMigrationMetadata.Source

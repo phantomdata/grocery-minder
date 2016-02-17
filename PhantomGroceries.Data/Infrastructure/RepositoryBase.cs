@@ -55,6 +55,11 @@ namespace PhantomGroceries.Data.Infrastructure
                 dbSet.Remove(obj);
         }
 
+        public virtual void Commit()
+        {
+            dataContext.Commit();
+        }
+
         public virtual T GetById(int id)
         {
             return dbSet.Find(id);

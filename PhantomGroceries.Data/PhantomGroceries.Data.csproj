@@ -62,12 +62,10 @@
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDbFactory.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
-    <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
-    <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201602170420226_Initial Migration.cs" />
-    <Compile Include="Migrations\201602170420226_Initial Migration.Designer.cs">
-      <DependentUpon>201602170420226_Initial Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201602170522208_Initial migration after reset of id casings.cs" />
+    <Compile Include="Migrations\201602170522208_Initial migration after reset of id casings.Designer.cs">
+      <DependentUpon>201602170522208_Initial migration after reset of id casings.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,8 +82,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602170420226_Initial Migration.resx">
-      <DependentUpon>201602170420226_Initial Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602170522208_Initial migration after reset of id casings.resx">
+      <DependentUpon>201602170522208_Initial migration after reset of id casings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

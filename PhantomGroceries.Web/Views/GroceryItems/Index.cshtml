@@ -1,4 +1,4 @@
-﻿
+﻿@model IList<PhantomGroceries.Domain.Models.GroceryItem>
 @{
     ViewBag.Title = "Index";
 }
@@ -6,3 +6,7 @@
 @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" } )
 <h2>Index</h2>
 
+@foreach(var groceryItem in Model)
+{
+    <p>@groceryItem.Name</p>
+}
