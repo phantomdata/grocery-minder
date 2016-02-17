@@ -8,6 +8,7 @@ namespace PhantomGroceries.Domain.Models
 {
     public class GroceryItem
     {
+        public int GroceryItemID { get; set; }
         public string Name { get; set; }
     }
 }

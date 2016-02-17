@@ -1,4 +1,4 @@
-namespace PhantomPurchases.Data.Migrations
+namespace PhantomGroceries.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
@@ -8,13 +8,13 @@ namespace PhantomPurchases.Data.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.RecurringPurchases",
+                "dbo.GroceryItems",
                 c => new
                     {
-                        RecurringPurchaseID = c.Int(nullable: false, identity: true),
+                        GroceryItemID = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 255),
                     })
-                .PrimaryKey(t => t.RecurringPurchaseID);
+                .PrimaryKey(t => t.GroceryItemID);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -103,7 +103,7 @@ namespace PhantomPurchases.Data.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.RecurringPurchases");
+            DropTable("dbo.GroceryItems");
         }
     }
 }

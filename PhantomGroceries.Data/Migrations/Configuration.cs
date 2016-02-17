@@ -1,4 +1,4 @@
-namespace PhantomPurchases.Data.Migrations
+namespace PhantomGroceries.Data.Migrations
 {
     using System;
     using System.Data.Entity;

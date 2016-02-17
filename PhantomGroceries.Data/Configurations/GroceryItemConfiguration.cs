@@ -11,6 +11,7 @@ namespace PhantomGroceries.Data.Configurations
         {
             ToTable("GroceryItems");
             Property(c => c.Name).IsRequired().HasMaxLength(255);
+            HasKey(c => c.GroceryItemID);
         }
     }
 }
