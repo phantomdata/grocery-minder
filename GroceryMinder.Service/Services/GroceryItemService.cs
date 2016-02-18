@@ -10,11 +10,11 @@ namespace GroceryMinder.Service.Services
 {
     public interface IGroceryItemService
     {
-        void Create(GroceryItem groceryItem);
-        void Delete(GroceryItem item);
-        GroceryItem Get(string userId, int groceryItemId);
-        IQueryable<GroceryItem> GetAll(string userId);
-        void Update(GroceryItem groceryItem);
+        void Create(Grocery groceryItem);
+        void Delete(Grocery item);
+        Grocery Get(string userId, int groceryItemId);
+        IQueryable<Grocery> GetAll(string userId);
+        void Update(Grocery groceryItem);
     }
     public class GroceryItemService : IGroceryItemService
     {
@@ -25,33 +25,33 @@ namespace GroceryMinder.Service.Services
             this.groceryItemRepository = groceryItemRepository;
         }
 
-        public void Create(GroceryItem groceryItem)
+        public void Create(Grocery groceryItem)
         {
             groceryItemRepository.Add(groceryItem);
             groceryItemRepository.Commit();
             return;
         }
 
-        public void Delete(GroceryItem item)
+        public void Delete(Grocery item)
         {
             groceryItemRepository.Delete(item);
             groceryItemRepository.Commit();
         }
 
-        public GroceryItem Get(string userId, int groceryItemId)
+        public Grocery Get(string userId, int groceryItemId)
         {
             var ret = groceryItemRepository.Get(x => x.ApplicationUserId == userId && x.GroceryItemId == groceryItemId);
             return ret;
         }
 
-        public IQueryable<GroceryItem> GetAll(string userId)
+        public IQueryable<Grocery> GetAll(string userId)
         {
             var ret = groceryItemRepository.GetAll().Where(x => x.ApplicationUserId == userId);
 
             return ret;
         }
 
-        public void Update(GroceryItem groceryItem)
+        public void Update(Grocery groceryItem)
         {
             groceryItemRepository.Update(groceryItem);
             groceryItemRepository.Commit();

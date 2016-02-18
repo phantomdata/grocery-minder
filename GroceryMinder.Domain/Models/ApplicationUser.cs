@@ -17,6 +17,6 @@ namespace GroceryMinder.Domain.Models
         }
 
         public virtual ICollection<GroceryCategory> GroceryCategories { get; set; }
-        public virtual ICollection<GroceryItem> GroceryItems { get; set; }
+        public virtual ICollection<Grocery> GroceryItems { get; set; }
     }
 }

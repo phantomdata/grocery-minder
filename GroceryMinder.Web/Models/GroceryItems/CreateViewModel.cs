@@ -25,9 +25,9 @@ namespace GroceryMinder.Web.Models.GroceryItems
         #endregion
 
         #region Implementation
-        public GroceryItem ToGroceryItem()
+        public Grocery ToGroceryItem()
         {
-            var ret = new GroceryItem()
+            var ret = new Grocery()
             {
                 LastPurchasedAt = this.LastPurchasedAt,
                 Name = this.Name,

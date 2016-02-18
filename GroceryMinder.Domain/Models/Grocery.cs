@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GroceryMinder.Domain.Models
 {
-    public class GroceryItem
+    public class Grocery
     {
         [Key]
         public int GroceryItemId { get; set; }

@@ -28,7 +28,7 @@ namespace GroceryMinder.Web.Models.GroceryItems
         #region Constructors
         public UpdateViewModel() { }
 
-        public UpdateViewModel(GroceryItem groceryItem)
+        public UpdateViewModel(Grocery groceryItem)
         {
             GroceryItemId = groceryItem.GroceryItemId;
             LastPurchasedAt = groceryItem.LastPurchasedAt;
@@ -38,7 +38,7 @@ namespace GroceryMinder.Web.Models.GroceryItems
         #endregion
 
         #region Implementation
-        public GroceryItem UpdatedGroceryItem(GroceryItem item)
+        public Grocery UpdatedGroceryItem(Grocery item)
         {
             item.LastPurchasedAt = this.LastPurchasedAt;
             item.Name = this.Name;
