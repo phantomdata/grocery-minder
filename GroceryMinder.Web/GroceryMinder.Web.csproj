@@ -258,10 +258,13 @@
     <Content Include="Views\GroceryItems\_Form.cshtml" />
     <Content Include="Views\GroceryItems\Update.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
+    <Content Include="Views\GroceryCategory\_Form.cshtml" />
+    <Content Include="Views\GroceryCategory\Create.cshtml" />
+    <Content Include="Views\GroceryCategory\Index.cshtml" />
+    <Content Include="Views\GroceryCategory\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GroceryCategory\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
