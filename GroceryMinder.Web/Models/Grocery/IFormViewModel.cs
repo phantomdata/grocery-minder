@@ -9,7 +9,7 @@ namespace GroceryMinder.Web.Models.Grocery
 {
     public interface IFormViewModel
     {
-        int GroceryItemId { get; set; }
+        int Id { get; set; }
 
         [Display(Name="Last Purchased On")]
         DateTime LastPurchasedAt { get; set; }

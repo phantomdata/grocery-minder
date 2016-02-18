@@ -38,9 +38,9 @@ namespace GroceryMinder.Service.Services
             groceryItemRepository.Commit();
         }
 
-        public Grocery Get(string userId, int groceryItemId)
+        public Grocery Get(string userId, int Id)
         {
-            var ret = groceryItemRepository.Get(x => x.ApplicationUserId == userId && x.GroceryItemId == groceryItemId);
+            var ret = groceryItemRepository.Get(x => x.ApplicationUserId == userId && x.Id == Id);
             return ret;
         }
 

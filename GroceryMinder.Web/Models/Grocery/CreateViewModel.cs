@@ -10,7 +10,7 @@ namespace GroceryMinder.Web.Models.Grocery
     public class CreateViewModel : IFormViewModel
     {
         #region Properties
-        public int GroceryItemId { get; set; }
+        public int Id { get; set; }
 
         [Display(Name="Last Purchased At")]
         [Required]

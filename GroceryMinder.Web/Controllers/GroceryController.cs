@@ -77,7 +77,7 @@ namespace GroceryMinder.Web.Controllers
                 return View(vm);
             }
 
-            var id = Convert.ToInt32(vm.GroceryItemId);
+            var id = Convert.ToInt32(vm.Id);
             var toUpdate = groceryItemService.Get(User.Identity.GetUserId(), id);
             if (toUpdate == null) return HttpNotFound();
 

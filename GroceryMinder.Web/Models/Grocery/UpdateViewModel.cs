@@ -11,7 +11,7 @@ namespace GroceryMinder.Web.Models.Grocery
     {
         #region Properties
         [Required]
-        public int GroceryItemId { get; set; }
+        public int Id { get; set; }
 
         [Display(Name="Last Purchased At")]
         [Required]
@@ -30,7 +30,7 @@ namespace GroceryMinder.Web.Models.Grocery
 
         public UpdateViewModel(Domain.Models.Grocery groceryItem)
         {
-            GroceryItemId = groceryItem.GroceryItemId;
+            Id = groceryItem.Id;
             LastPurchasedAt = groceryItem.LastPurchasedAt;
             Name = groceryItem.Name;
             PurchaseFrequency = groceryItem.PurchaseFrequency;
