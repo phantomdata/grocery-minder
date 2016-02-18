@@ -9,6 +9,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Category</th>
             <th>Name</th>
             <th>Purchase Frequency</th>
             <th>Last Purchased On</th>
@@ -19,6 +20,7 @@
         @foreach (var groceryItem in Model)
         {
             <tr>
+                <td>@groceryItem.GroceryCategory.Name</td>
                 <td>@groceryItem.Name</td>
                 <td>@Html.DisplayFor(m => groceryItem.PurchaseFrequency)</td>
                 <td>@groceryItem.LastPurchasedAt.ToShortDateString()</td>
