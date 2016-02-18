@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GroceryCategoryRepository.cs" />
     <Compile Include="Repositories\GroceryItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
