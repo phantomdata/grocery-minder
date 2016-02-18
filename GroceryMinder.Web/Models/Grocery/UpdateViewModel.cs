@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace GroceryMinder.Web.Models.GroceryItems
+namespace GroceryMinder.Web.Models.Grocery
 {
     public class UpdateViewModel : IFormViewModel
     {
@@ -28,7 +28,7 @@ namespace GroceryMinder.Web.Models.GroceryItems
         #region Constructors
         public UpdateViewModel() { }
 
-        public UpdateViewModel(Grocery groceryItem)
+        public UpdateViewModel(Domain.Models.Grocery groceryItem)
         {
             GroceryItemId = groceryItem.GroceryItemId;
             LastPurchasedAt = groceryItem.LastPurchasedAt;
@@ -38,7 +38,7 @@ namespace GroceryMinder.Web.Models.GroceryItems
         #endregion
 
         #region Implementation
-        public Grocery UpdatedGroceryItem(Grocery item)
+        public Domain.Models.Grocery UpdatedGroceryItem(Domain.Models.Grocery item)
         {
             item.LastPurchasedAt = this.LastPurchasedAt;
             item.Name = this.Name;

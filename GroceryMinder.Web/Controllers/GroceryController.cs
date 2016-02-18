@@ -10,23 +10,23 @@ using System.Web.Mvc;
 namespace GroceryMinder.Web.Controllers
 {
     [Authorize]
-    public class GroceryItemsController : Controller
+    public class GroceryController : Controller
     {
-        private readonly IGroceryItemService groceryItemService;
+        private readonly IGroceryService groceryItemService;
 
-        public GroceryItemsController(IGroceryItemService groceryItemService)
+        public GroceryController(IGroceryService groceryItemService)
         {
             this.groceryItemService = groceryItemService;
         }
 
         public ActionResult Create()
         {
-            var vm = new Models.GroceryItems.CreateViewModel();
+            var vm = new Models.Grocery.CreateViewModel();
             return View(vm);
         }
 
         [HttpPost]
-        public ActionResult Create(Models.GroceryItems.CreateViewModel vm)
+        public ActionResult Create(Models.Grocery.CreateViewModel vm)
         {
             if (ModelState.IsValid == false) return View(vm);
 
@@ -55,8 +55,8 @@ namespace GroceryMinder.Web.Controllers
 
         public ActionResult Index()
         {
-            var groceryItems = groceryItemService.GetAll(User.Identity.GetUserId());
-            return View(groceryItems.ToList());
+            var items = groceryItemService.GetAll(User.Identity.GetUserId());
+            return View(items.ToList());
         }
 
         public ActionResult Update(int id)
@@ -64,13 +64,13 @@ namespace GroceryMinder.Web.Controllers
             var item = groceryItemService.Get(User.Identity.GetUserId(), id);
             if (item == null) return HttpNotFound();
 
-            var vm = new Models.GroceryItems.UpdateViewModel(item);
+            var vm = new Models.Grocery.UpdateViewModel(item);
 
             return View(vm);
         }
 
         [HttpPost]
-        public ActionResult Update(Models.GroceryItems.UpdateViewModel vm)
+        public ActionResult Update(Models.Grocery.UpdateViewModel vm)
         {
             if (ModelState.IsValid == false)
             {

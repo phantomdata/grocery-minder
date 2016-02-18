@@ -178,7 +178,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GroceryCategoryController.cs" />
-    <Compile Include="Controllers\GroceryItemsController.cs" />
+    <Compile Include="Controllers\GroceryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -189,9 +189,9 @@
     <Compile Include="Models\GroceryCategory\CreateViewModel.cs" />
     <Compile Include="Models\GroceryCategory\IFormViewModel.cs" />
     <Compile Include="Models\GroceryCategory\UpdateViewModel.cs" />
-    <Compile Include="Models\GroceryItems\CreateViewModel.cs" />
-    <Compile Include="Models\GroceryItems\IFormViewModel.cs" />
-    <Compile Include="Models\GroceryItems\UpdateViewModel.cs" />
+    <Compile Include="Models\Grocery\CreateViewModel.cs" />
+    <Compile Include="Models\Grocery\IFormViewModel.cs" />
+    <Compile Include="Models\Grocery\UpdateViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -253,10 +253,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\GroceryItems\Index.cshtml" />
-    <Content Include="Views\GroceryItems\Create.cshtml" />
-    <Content Include="Views\GroceryItems\_Form.cshtml" />
-    <Content Include="Views\GroceryItems\Update.cshtml" />
+    <Content Include="Views\Grocery\Index.cshtml" />
+    <Content Include="Views\Grocery\Create.cshtml" />
+    <Content Include="Views\Grocery\_Form.cshtml" />
+    <Content Include="Views\Grocery\Update.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <Content Include="Views\GroceryCategory\_Form.cshtml" />
     <Content Include="Views\GroceryCategory\Create.cshtml" />

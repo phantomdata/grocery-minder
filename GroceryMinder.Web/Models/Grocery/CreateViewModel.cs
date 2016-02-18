@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace GroceryMinder.Web.Models.GroceryItems
+namespace GroceryMinder.Web.Models.Grocery
 {
     public class CreateViewModel : IFormViewModel
     {
@@ -25,9 +25,9 @@ namespace GroceryMinder.Web.Models.GroceryItems
         #endregion
 
         #region Implementation
-        public Grocery ToGroceryItem()
+        public Domain.Models.Grocery ToGroceryItem()
         {
-            var ret = new Grocery()
+            var ret = new Domain.Models.Grocery()
             {
                 LastPurchasedAt = this.LastPurchasedAt,
                 Name = this.Name,

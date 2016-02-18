@@ -10,11 +10,11 @@ namespace GroceryMinder.Service.Services
 {
     public interface IGroceryCategoryService
     {
-        void Create(GroceryCategory groceryItem);
+        void Create(GroceryCategory item);
         void Delete(GroceryCategory item);
-        GroceryCategory Get(string userId, int groceryItemId);
+        GroceryCategory Get(string userId, int itemId);
         IQueryable<GroceryCategory> GetAll(string userId);
-        void Update(GroceryCategory groceryItem);
+        void Update(GroceryCategory item);
     }
     public class GroceryCategoryService : IGroceryCategoryService
     {

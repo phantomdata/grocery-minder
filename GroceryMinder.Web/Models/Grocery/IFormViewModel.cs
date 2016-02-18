@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace GroceryMinder.Web.Models.GroceryItems
+namespace GroceryMinder.Web.Models.Grocery
 {
     public interface IFormViewModel
     {

@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace GroceryMinder.Service.Services
 {
-    public interface IGroceryItemService
+    public interface IGroceryService
     {
-        void Create(Grocery groceryItem);
+        void Create(Grocery item);
         void Delete(Grocery item);
-        Grocery Get(string userId, int groceryItemId);
+        Grocery Get(string userId, int itemId);
         IQueryable<Grocery> GetAll(string userId);
-        void Update(Grocery groceryItem);
+        void Update(Grocery item);
     }
-    public class GroceryItemService : IGroceryItemService
+    public class GroceryService : IGroceryService
     {
-        private readonly IGroceryItemRepository groceryItemRepository;
+        private readonly IGroceryRepository groceryItemRepository;
 
-        public GroceryItemService(IGroceryItemRepository groceryItemRepository)
+        public GroceryService(IGroceryRepository groceryItemRepository)
         {
             this.groceryItemRepository = groceryItemRepository;
         }

@@ -18,7 +18,7 @@ namespace PhantomPurchases.Data
         }
 
         public DbSet<GroceryCategory> GroceryCategories { get; set; }
-        public DbSet<Grocery> GroceryItems { get; set; }
+        public DbSet<Grocery> Groceries { get; set; }
 
         public virtual void Commit()
         {
