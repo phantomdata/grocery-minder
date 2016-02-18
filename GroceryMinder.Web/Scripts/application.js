@@ -80,3 +80,12 @@ $(function() {
         return false;
     });
 });
+
+// Horrible autofocus on first form element if its present
+$(function () {
+    var el = $('input[type="text"]').first();
+    console.log(el);
+    if (el) {
+        el.focus();
+    }
+});
