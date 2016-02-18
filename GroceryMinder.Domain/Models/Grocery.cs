@@ -19,6 +19,12 @@ namespace GroceryMinder.Domain.Models
         [Index]
         public string ApplicationUserId { get; set; }
 
+        [ForeignKey("GroceryCategoryId")]
+        public virtual GroceryCategory GroceryCategory { get; set; }
+
+        [Index]
+        public int GroceryCategoryId { get; set; }
+
         [Display(Name = "Last Purchased At")]
         [Required]
         public DateTime LastPurchasedAt { get; set; }

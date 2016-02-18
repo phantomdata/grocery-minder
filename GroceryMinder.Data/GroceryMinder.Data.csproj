@@ -91,6 +91,10 @@
     <Compile Include="Migrations\201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.Designer.cs">
       <DependentUpon>201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602180541498_Adding relationship between Groceries and GroceryCategories.cs" />
+    <Compile Include="Migrations\201602180541498_Adding relationship between Groceries and GroceryCategories.Designer.cs">
+      <DependentUpon>201602180541498_Adding relationship between Groceries and GroceryCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GroceryCategoryRepository.cs" />
@@ -127,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.resx">
       <DependentUpon>201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602180541498_Adding relationship between Groceries and GroceryCategories.resx">
+      <DependentUpon>201602180541498_Adding relationship between Groceries and GroceryCategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

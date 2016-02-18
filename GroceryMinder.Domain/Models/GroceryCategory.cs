@@ -19,6 +19,8 @@ namespace GroceryMinder.Domain.Models
         [Index]
         public string ApplicationUserId { get; set; }
 
+        public virtual ICollection<GroceryCategory> GroceryCategories { get; set; }
+
         [Display(Name = "Name")]
         [MaxLength(255)]
         [Required]
