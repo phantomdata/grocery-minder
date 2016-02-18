@@ -253,6 +253,7 @@
     <Content Include="Views\GroceryItems\Create.cshtml" />
     <Content Include="Views\GroceryItems\_Form.cshtml" />
     <Content Include="Views\GroceryItems\Update.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

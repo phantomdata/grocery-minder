@@ -10,6 +10,8 @@
     <thead>
         <tr>
             <th>Name</th>
+            <th>Purchase Frequency</th>
+            <th>Last Purchased On</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -18,6 +20,8 @@
         {
             <tr>
                 <td>@groceryItem.Name</td>
+                <td>@Html.DisplayFor(m => groceryItem.PurchaseFrequency)</td>
+                <td>@groceryItem.LastPurchasedAt</td>
                 <td>
                     @Html.ActionLink("Update", "Update", new { id = groceryItem.GroceryItemId}, new { @class = "btn btn-default"})
                     @Html.ActionLink("Delete", "Delete", new { id = groceryItem.GroceryItemId }, new { @class = "btn btn-default delete" })

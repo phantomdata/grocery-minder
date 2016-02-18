@@ -33,9 +33,16 @@ namespace GroceryMinder.Domain.Models
 
     public enum PurchaseFrequency
     {
+        [Display(Name = "Weekly")]
         Weekly,
+
+        [Display(Name = "Every 2 Weeks")]
         EveryTwoWeeks,
+
+        [Display(Name = "Every Month")]
         EveryMonth,
+
+        [Display(Name = "Every 2 Months")]
         EveryTwoMonths
     }
 }
