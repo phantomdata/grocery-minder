@@ -23,6 +23,7 @@ namespace GroceryMinder.Domain.Models
         public virtual GroceryCategory GroceryCategory { get; set; }
 
         [Index]
+        [Required]
         public int GroceryCategoryId { get; set; }
 
         [Display(Name = "Last Purchased At")]

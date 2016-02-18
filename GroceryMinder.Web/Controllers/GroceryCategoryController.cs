@@ -15,6 +15,7 @@ namespace GroceryMinder.Web.Controllers
 
         public GroceryCategoryController(IGroceryCategoryService groceryCategoryService)
         {
+            // TODO: Cache current user id here
             this.groceryCategoryService = groceryCategoryService;
         }
 

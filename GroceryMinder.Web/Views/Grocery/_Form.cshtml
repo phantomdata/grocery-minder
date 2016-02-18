@@ -8,13 +8,21 @@
 
     @Html.HiddenFor(model => model.Id)
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.LastPurchasedAt, new {  @class = "" })
-        @Html.TextBoxFor(model => model.LastPurchasedAt, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
-    </div>
+    <!-- Base Properties -->
     <div class="form-group">
         @Html.LabelFor(m => m.Name, new { @class = "" })
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GroceryCategoryId, new { @class = "" })
+        @Html.DropDownListFor(m => m.GroceryCategoryId, Model.AvailableGroceryCategories, new { @class = "form-control" })
+    </div>
+
+
+    <!-- Date Related -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastPurchasedAt, new { @class = "" })
+        @Html.TextBoxFor(model => model.LastPurchasedAt, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.PurchaseFrequency, new { @class = "" })
