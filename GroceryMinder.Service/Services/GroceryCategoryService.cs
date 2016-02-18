@@ -20,7 +20,7 @@ namespace GroceryMinder.Service.Services
     {
         private readonly IGroceryCategoryRepository groceryCategoryRepository;
 
-        public GroceryCategoryService(IGroceryCategoryService groceryItemRepository)
+        public GroceryCategoryService(IGroceryCategoryRepository groceryCategoryRepository)
         {
             this.groceryCategoryRepository = groceryCategoryRepository;
         }
