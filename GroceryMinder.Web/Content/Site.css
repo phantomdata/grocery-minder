@@ -27,9 +27,17 @@ input.input-validation-error {
     border: 1px solid #af4949;
 }
 
+input[type="date"] {
+    height: 2.10em;
+}
 
 .actions-column {
     text-align: right;
+}
+.header h1 {
+    color: #BEC4CA;
+    line-height: 1em;
+    font-size: 1.55em;
 }
 .page-header-container {
     margin-bottom: 25px;

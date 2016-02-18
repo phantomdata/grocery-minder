@@ -8,26 +8,28 @@
 
     @Html.HiddenFor(model => model.Id)
 
-    <!-- Base Properties -->
-    <div class="form-group">
-        @Html.LabelFor(m => m.Name, new { @class = "" })
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control"})
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.GroceryCategoryId, new { @class = "" })
-        @Html.DropDownListFor(m => m.GroceryCategoryId, Model.AvailableGroceryCategories, new { @class = "form-control" })
+    <div class="row">
+        <!-- Base Properties -->
+        <div class="form-group col-sm-6">
+            @Html.LabelFor(m => m.Name, new { @class = "" })
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-sm-6">
+            @Html.LabelFor(m => m.GroceryCategoryId, new { @class = "" })
+            @Html.DropDownListFor(m => m.GroceryCategoryId, Model.AvailableGroceryCategories, new { @class = "form-control" })
+        </div>
     </div>
 
+    <div class="row">
+        <div class="form-group col-sm-6">
+            @Html.LabelFor(m => m.PurchaseFrequency, new { @class = "" })
 
-    <!-- Date Related -->
-    <div class="form-group">
-        @Html.LabelFor(m => m.LastPurchasedAt, new { @class = "" })
-        @Html.TextBoxFor(model => model.LastPurchasedAt, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.PurchaseFrequency, new { @class = "" })
-        
-        @Html.EnumDropDownListFor(m => m.PurchaseFrequency, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(m => m.PurchaseFrequency, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-sm-6">
+            @Html.LabelFor(m => m.LastPurchasedAt, new { @class = "" })
+            @Html.TextBoxFor(model => model.LastPurchasedAt, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        </div>
     </div>
     <div class="form-group">
         <input type="submit" value="Save" class="btn btn-success" />

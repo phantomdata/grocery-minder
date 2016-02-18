@@ -11,16 +11,18 @@
         <div class="header clearfix">
             <nav>
                 <ul class="nav nav-pills pull-xs-right">
-                    <li class="nav-item">
-                        @Html.ActionLink("Groceries", "Index", "Grocery", null, new { @class = "nav-link" } )
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Categories", "Index", "GroceryCategory", null, new { @class = "nav-link" })
-                    </li>
+                    @if (Request.IsAuthenticated) {
+                        <li class="nav-item">
+                            @Html.ActionLink("Groceries", "Index", "Grocery", null, new { @class = "nav-link" } )
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Categories", "Index", "GroceryCategory", null, new { @class = "nav-link" })
+                        </li>
+                    }
                     @Html.Partial("_LoginPartial")
                 </ul>
             </nav>
-            <h3 class="text-muted">Grocery Minder</h3>
+            <h1 class="text-muted">Grocery Minder</h1>
         </div> <!-- /header clearfix -->
     </div> <!-- /container -->
 
