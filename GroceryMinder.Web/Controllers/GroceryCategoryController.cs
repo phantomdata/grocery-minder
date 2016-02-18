@@ -61,7 +61,7 @@ namespace GroceryMinder.Web.Controllers
 
         public ActionResult Index()
         {
-            var items = groceryCategoryService.GetAll(User.Identity.GetUserId());
+            var items = groceryCategoryService.GetAll(User.Identity.GetUserId()).OrderBy(c => c.Priority);
             return View(items.ToList());
         }
 
