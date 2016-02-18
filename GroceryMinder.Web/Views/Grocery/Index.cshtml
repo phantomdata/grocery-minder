@@ -3,17 +3,20 @@
     ViewBag.Title = "Index";
 }
 
-@Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" } )
-<h2>Index</h2>
+<div class="page-header-container">
+    <h2>Groceries</h2>
+    @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" })
+</div>
+
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Category</th>
             <th>Name</th>
-            <th>Purchase Frequency</th>
-            <th>Last Purchased On</th>
-            <th>Actions</th>
+            <th>Frequency</th>
+            <th>Last Purchased</th>
+            <th>&nbsp;</th>
         </tr>
     </thead>
     <tbody>
@@ -24,9 +27,9 @@
                 <td>@groceryItem.Name</td>
                 <td>@Html.DisplayFor(m => groceryItem.PurchaseFrequency)</td>
                 <td>@groceryItem.LastPurchasedAt.ToShortDateString()</td>
-                <td>
-                    @Html.ActionLink("Update", "Update", new { id = groceryItem.Id}, new { @class = "btn btn-default"})
-                    @Html.ActionLink("Delete", "Delete", new { id = groceryItem.Id }, new { @class = "btn btn-default delete" })
+                <td class="actions-column">
+                    @Html.ActionLink("📖", "Update", new { id = groceryItem.Id}, new { @class = "btn btn-default"})
+                    @Html.ActionLink("␡", "Delete", new { id = groceryItem.Id }, new { @class = "btn btn-default delete" })
                 </td>
             </tr>
         }

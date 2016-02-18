@@ -26,3 +26,21 @@ textarea {
 input.input-validation-error {
     border: 1px solid #af4949;
 }
+
+
+.actions-column {
+    text-align: right;
+}
+.page-header-container {
+    margin-bottom: 25px;
+    overflow:hidden;
+}
+.page-header-container h2 {
+    display: inline;
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.55em;
+}
+.page-header-container a {
+    float: right;
+}

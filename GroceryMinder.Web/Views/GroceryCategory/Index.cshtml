@@ -3,14 +3,17 @@
     ViewBag.Title = "Index";
 }
 
-@Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" } )
-<h2>Index</h2>
+
+<div class="page-header-container">
+    <h2>Categories</h2>
+    @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" })
+</div>
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Name</th>
-            <th>Actions</th>
+            <th>&nbsp;</th>
         </tr>
     </thead>
     <tbody>
@@ -18,9 +21,9 @@
         {
             <tr>
                 <td>@item.Name</td>
-                <td>
-                    @Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "btn btn-default"})
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-default delete" })
+                <td class="actions-column">
+                    @Html.ActionLink("📖", "Update", new { id = item.Id }, new { @class = "btn btn-default"})
+                    @Html.ActionLink("␡", "Delete", new { id = item.Id }, new { @class = "btn btn-default delete" })
                 </td>
             </tr>
         }
