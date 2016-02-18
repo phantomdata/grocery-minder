@@ -177,6 +177,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GroceryCategoryController.cs" />
     <Compile Include="Controllers\GroceryItemsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -185,6 +186,9 @@
     </Compile>
     <Compile Include="Models\Authentication\AccountViewModels.cs" />
     <Compile Include="Models\Authentication\ManageViewModels.cs" />
+    <Compile Include="Models\GroceryCategory\CreateViewModel.cs" />
+    <Compile Include="Models\GroceryCategory\IFormViewModel.cs" />
+    <Compile Include="Models\GroceryCategory\UpdateViewModel.cs" />
     <Compile Include="Models\GroceryItems\CreateViewModel.cs" />
     <Compile Include="Models\GroceryItems\IFormViewModel.cs" />
     <Compile Include="Models\GroceryItems\UpdateViewModel.cs" />
@@ -257,6 +261,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\GroceryCategory\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
