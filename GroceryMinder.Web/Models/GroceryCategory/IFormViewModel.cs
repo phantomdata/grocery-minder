@@ -11,5 +11,7 @@ namespace GroceryMinder.Web.Models.GroceryCategory
         int GroceryCategoryId { get; set; }
 
         string Name { get; set; }
+
+        int Priority { get; set; }
     }
 }

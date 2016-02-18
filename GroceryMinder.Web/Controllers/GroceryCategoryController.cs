@@ -21,6 +21,11 @@ namespace GroceryMinder.Web.Controllers
         public ActionResult Create()
         {
             var vm = new Models.GroceryCategory.CreateViewModel();
+            var lastGroceryCategory = groceryCategoryService.GetAll(User.Identity.GetUserId()).OrderByDescending(c => c.Priority).First();
+            if (lastGroceryCategory != null)
+            {
+                vm.Priority = lastGroceryCategory.Priority + 1;
+            }
             return View(vm);
         }
 

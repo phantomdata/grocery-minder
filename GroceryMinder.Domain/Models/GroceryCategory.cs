@@ -23,5 +23,8 @@ namespace GroceryMinder.Domain.Models
         [MaxLength(255)]
         [Required]
         public string Name { get; set; }
+
+        [Display(Name = "Priority")]
+        public int Priority { get; set; }
     }
 }

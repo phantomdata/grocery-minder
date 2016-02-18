@@ -16,6 +16,9 @@ namespace GroceryMinder.Web.Models.GroceryCategory
         [Required]
         [MaxLength(255)]
         public string Name { get; set; }
+
+        [Required]
+        public int Priority { get; set; }
         #endregion
 
         #region Constructors
@@ -25,6 +28,7 @@ namespace GroceryMinder.Web.Models.GroceryCategory
         {
             GroceryCategoryId = item.GroceryCategoryId;
             Name = item.Name;
+            Priority = item.Priority;
         }
         #endregion
 
@@ -32,6 +36,7 @@ namespace GroceryMinder.Web.Models.GroceryCategory
         public Domain.Models.GroceryCategory UpdatedGroceryCategory(Domain.Models.GroceryCategory item)
         {
             item.Name = this.Name;
+            item.Priority = this.Priority;
 
             return item;
         }
