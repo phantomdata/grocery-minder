@@ -37,6 +37,7 @@ namespace GroceryMinder.Web.Controllers
         {
             var vm = new Models.Grocery.CreateViewModel();
             vm.AvailableGroceryCategories = getAvailableCategories();
+            vm.LastPurchasedAt = DateTime.Now;
 
             return View(vm);
         }
@@ -52,6 +53,11 @@ namespace GroceryMinder.Web.Controllers
 
             var item = vm.ToGroceryItem();
             item.ApplicationUserId = UserId;
+
+            if (groceryCategoryService.GetAll(UserId).Any(c => c.Id == item.GroceryCategoryId) == false)
+            {
+                return HttpNotFound(); // Ugh, there's no helper for 401 or 403
+            }
 
             groceryItemService.Create(item);
 
@@ -85,6 +91,7 @@ namespace GroceryMinder.Web.Controllers
             if (item == null) return HttpNotFound();
 
             var vm = new Models.Grocery.UpdateViewModel(item);
+            vm.AvailableGroceryCategories = getAvailableCategories();
 
             return View(vm);
         }
@@ -103,6 +110,11 @@ namespace GroceryMinder.Web.Controllers
             if (toUpdate == null) return HttpNotFound();
 
             var updated = vm.UpdatedGroceryItem(toUpdate);
+
+            if (groceryCategoryService.GetAll(UserId).Any(c => c.Id == updated.GroceryCategoryId) == false)
+            {
+                return HttpNotFound(); // Ugh, there's no helper for 401 or 403
+            }
 
             groceryItemService.Update(updated);
 

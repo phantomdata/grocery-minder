@@ -36,6 +36,7 @@ namespace GroceryMinder.Web.Models.Grocery
         {
             var ret = new Domain.Models.Grocery()
             {
+                GroceryCategoryId = this.GroceryCategoryId,
                 LastPurchasedAt = this.LastPurchasedAt,
                 Name = this.Name,
                 PurchaseFrequency = this.PurchaseFrequency

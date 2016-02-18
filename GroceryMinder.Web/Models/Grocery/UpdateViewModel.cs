@@ -38,6 +38,7 @@ namespace GroceryMinder.Web.Models.Grocery
         public UpdateViewModel(Domain.Models.Grocery groceryItem)
         {
             Id = groceryItem.Id;
+            GroceryCategoryId = groceryItem.GroceryCategoryId;
             LastPurchasedAt = groceryItem.LastPurchasedAt;
             Name = groceryItem.Name;
             PurchaseFrequency = groceryItem.PurchaseFrequency;
@@ -47,6 +48,7 @@ namespace GroceryMinder.Web.Models.Grocery
         #region Implementation
         public Domain.Models.Grocery UpdatedGroceryItem(Domain.Models.Grocery item)
         {
+            item.GroceryCategoryId = this.GroceryCategoryId;
             item.LastPurchasedAt = this.LastPurchasedAt;
             item.Name = this.Name;
             item.PurchaseFrequency = this.PurchaseFrequency;
