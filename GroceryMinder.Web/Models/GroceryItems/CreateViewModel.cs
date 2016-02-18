@@ -12,9 +12,16 @@ namespace GroceryMinder.Web.Models.GroceryItems
         #region Properties
         public int GroceryItemId { get; set; }
 
+        [Display(Name="Last Purchased At")]
+        [Required]
+        public DateTime LastPurchasedAt { get; set; }
+
         [Required]
         [MaxLength(255)]
         public string Name { get; set; }
+
+        [Display(Name="Purchase Frequency")]
+        public PurchaseFrequency PurchaseFrequency { get; set; }
         #endregion
 
         #region Implementation
@@ -22,7 +29,9 @@ namespace GroceryMinder.Web.Models.GroceryItems
         {
             var ret = new GroceryItem()
             {
-                Name = this.Name
+                LastPurchasedAt = this.LastPurchasedAt,
+                Name = this.Name,
+                PurchaseFrequency = this.PurchaseFrequency
             };
 
             return ret;

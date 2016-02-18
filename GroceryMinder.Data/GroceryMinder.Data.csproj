@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201602170522208_Initial migration after reset of id casings.Designer.cs">
       <DependentUpon>201602170522208_Initial migration after reset of id casings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.cs" />
+    <Compile Include="Migrations\201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.Designer.cs">
+      <DependentUpon>201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GroceryItemRepository.cs" />
@@ -84,6 +88,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602170522208_Initial migration after reset of id casings.resx">
       <DependentUpon>201602170522208_Initial migration after reset of id casings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.resx">
+      <DependentUpon>201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
