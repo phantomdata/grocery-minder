@@ -13,7 +13,7 @@ namespace GroceryMinder.Service.Services
         void Create(GroceryItem groceryItem);
         void Delete(GroceryItem item);
         GroceryItem Get(string userId, int groceryItemId);
-        IEnumerable<GroceryItem> GetAll(string userId);
+        IQueryable<GroceryItem> GetAll(string userId);
         void Update(GroceryItem groceryItem);
     }
     public class GroceryItemService : IGroceryItemService
@@ -44,7 +44,7 @@ namespace GroceryMinder.Service.Services
             return ret;
         }
 
-        public IEnumerable<GroceryItem> GetAll(string userId)
+        public IQueryable<GroceryItem> GetAll(string userId)
         {
             var ret = groceryItemRepository.GetAll().Where(x => x.ApplicationUserId == userId);
 

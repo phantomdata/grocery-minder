@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace GroceryMinder.Data.Infrastructure
@@ -13,7 +14,7 @@ namespace GroceryMinder.Data.Infrastructure
         void Commit();
         T GetById(int id);
         T Get(Expression<Func<T, bool>> where);
-        IEnumerable<T> GetAll();
+        IQueryable<T> GetAll();
         IEnumerable<T> GetMany(Expression<Func<T, bool>> where);
     }
 }

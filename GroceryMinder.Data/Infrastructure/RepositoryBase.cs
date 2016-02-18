@@ -65,9 +65,9 @@ namespace GroceryMinder.Data.Infrastructure
             return dbSet.Find(id);
         }
 
-        public virtual IEnumerable<T> GetAll()
+        public virtual IQueryable<T> GetAll()
         {
-            return dbSet.ToList();
+            return dbSet;
         }
 
         public virtual IEnumerable<T> GetMany(Expression<Func<T, bool>> where)
