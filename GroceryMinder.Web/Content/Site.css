@@ -20,7 +20,7 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    
 }
 
 input.input-validation-error {
@@ -29,6 +29,9 @@ input.input-validation-error {
 
 input[type="date"] {
     height: 2.10em;
+}
+input[type="submit"].full-width {
+    width: 100%;
 }
 
 .actions-column {
