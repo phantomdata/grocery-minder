@@ -11,7 +11,7 @@ namespace GroceryMinder.Web.Models.GroceryCategory
     {
         #region Properties
         [Required]
-        public int GroceryCategoryId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(255)]
@@ -26,7 +26,7 @@ namespace GroceryMinder.Web.Models.GroceryCategory
 
         public UpdateViewModel(Domain.Models.GroceryCategory item)
         {
-            GroceryCategoryId = item.GroceryCategoryId;
+            Id = item.Id;
             Name = item.Name;
             Priority = item.Priority;
         }

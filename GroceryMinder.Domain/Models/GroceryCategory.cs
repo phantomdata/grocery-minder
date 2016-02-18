@@ -11,7 +11,7 @@ namespace GroceryMinder.Domain.Models
     public class GroceryCategory
     {
         [Key]
-        public int GroceryCategoryId { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("ApplicationUserId")]
         public virtual ApplicationUser ApplicationUser { get; set; }

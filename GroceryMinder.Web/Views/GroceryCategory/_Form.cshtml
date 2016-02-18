@@ -6,7 +6,7 @@
     @Html.ValidationSummary(false)
     @Html.AntiForgeryToken()
 
-    @Html.HiddenFor(model => model.GroceryCategoryId)
+    @Html.HiddenFor(model => model.Id)
 
     <div class="form-group">
         @Html.LabelFor(m => m.Name, new { @class = "" })

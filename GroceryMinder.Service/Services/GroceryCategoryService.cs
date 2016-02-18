@@ -40,7 +40,7 @@ namespace GroceryMinder.Service.Services
 
         public GroceryCategory Get(string userId, int itemId)
         {
-            var ret = groceryCategoryRepository.Get(x => x.ApplicationUserId == userId && x.GroceryCategoryId == itemId);
+            var ret = groceryCategoryRepository.Get(x => x.ApplicationUserId == userId && x.Id == itemId);
             return ret;
         }
 

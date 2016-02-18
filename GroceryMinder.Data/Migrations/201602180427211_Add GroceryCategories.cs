@@ -11,11 +11,11 @@ namespace GroceryMinder.Data.Migrations
                 "dbo.GroceryCategories",
                 c => new
                     {
-                        GroceryCategoryId = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
                         ApplicationUserId = c.String(maxLength: 128),
                         Name = c.String(nullable: false, maxLength: 255),
                     })
-                .PrimaryKey(t => t.GroceryCategoryId)
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUserId)
                 .Index(t => t.ApplicationUserId);
             

@@ -10,7 +10,7 @@ namespace GroceryMinder.Web.Models.GroceryCategory
     public class CreateViewModel : IFormViewModel
     {
         #region Properties
-        public int GroceryCategoryId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(255)]
