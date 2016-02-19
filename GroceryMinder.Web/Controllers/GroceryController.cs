@@ -10,20 +10,8 @@ using System.Web.Mvc;
 namespace GroceryMinder.Web.Controllers
 {
     [Authorize]
-    public class GroceryController : Controller
+    public class GroceryController : BaseController
     {
-        private string _userId { get; set; } // Not meant to be used beyond following scope
-        private string UserId
-        {
-            get
-            {
-                if (_userId == null)
-                {
-                    _userId = User.Identity.GetUserId();
-                }
-                return _userId;
-            }
-        }
         private readonly IGroceryCategoryService groceryCategoryService;
         private readonly IGroceryService groceryItemService;
 

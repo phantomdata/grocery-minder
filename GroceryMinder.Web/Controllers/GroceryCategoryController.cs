@@ -9,13 +9,12 @@ using System.Web.Mvc;
 namespace GroceryMinder.Web.Controllers
 {
     [Authorize]
-    public class GroceryCategoryController : Controller
+    public class GroceryCategoryController : BaseController
     {
         private readonly IGroceryCategoryService groceryCategoryService;
 
         public GroceryCategoryController(IGroceryCategoryService groceryCategoryService)
         {
-            // TODO: Cache current user id here
             this.groceryCategoryService = groceryCategoryService;
         }
 
@@ -23,7 +22,7 @@ namespace GroceryMinder.Web.Controllers
         {
             var vm = new Models.GroceryCategory.CreateViewModel();
 
-            var lastGroceryCategory = groceryCategoryService.GetAll(User.Identity.GetUserId()).OrderByDescending(c => c.Priority).FirstOrDefault();
+            var lastGroceryCategory = groceryCategoryService.GetAll(UserId).OrderByDescending(c => c.Priority).FirstOrDefault();
             if (lastGroceryCategory != null)
             {
                 vm.Priority = lastGroceryCategory.Priority + 1;
@@ -38,7 +37,7 @@ namespace GroceryMinder.Web.Controllers
             if (ModelState.IsValid == false) return View(vm);
 
             var item = vm.ToGroceryCategory();
-            item.ApplicationUserId = User.Identity.GetUserId();
+            item.ApplicationUserId = UserId;
 
             groceryCategoryService.Create(item);
 
@@ -50,7 +49,7 @@ namespace GroceryMinder.Web.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            var item = groceryCategoryService.Get(User.Identity.GetUserId(), id);
+            var item = groceryCategoryService.Get(UserId, id);
             if (item == null) return HttpNotFound();
 
             groceryCategoryService.Delete(item);
@@ -62,13 +61,13 @@ namespace GroceryMinder.Web.Controllers
 
         public ActionResult Index()
         {
-            var items = groceryCategoryService.GetAll(User.Identity.GetUserId()).OrderBy(c => c.Priority);
+            var items = groceryCategoryService.GetAll(UserId).OrderBy(c => c.Priority);
             return View(items.ToList());
         }
 
         public ActionResult Update(int id)
         {
-            var item = groceryCategoryService.Get(User.Identity.GetUserId(), id);
+            var item = groceryCategoryService.Get(UserId, id);
             if (item == null) return HttpNotFound();
 
             var vm = new Models.GroceryCategory.UpdateViewModel(item);
@@ -85,7 +84,7 @@ namespace GroceryMinder.Web.Controllers
             }
 
             var id = Convert.ToInt32(vm.Id);
-            var toUpdate = groceryCategoryService.Get(User.Identity.GetUserId(), id);
+            var toUpdate = groceryCategoryService.Get(UserId, id);
             if (toUpdate == null) return HttpNotFound();
 
             var updated = vm.UpdatedGroceryCategory(toUpdate);
