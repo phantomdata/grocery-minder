@@ -22,9 +22,18 @@
             <tr>
                 <td>@grocery.GroceryCategory.Name</td>
                 <td>@grocery.Name</td>
-                <td>$@grocery.AverageCost</td>
+                <td>$@string.Format("{0:0.00}", grocery.AverageCost)</td>
             </tr>
         }
+        <tr>
+            <td>&nbsp;</td>
+            <td style="text-align:right;">
+                <strong>Expected Total Cost</strong>
+            </td>
+            <td>
+                $@string.Format("{0:0.00}", Model.TotalCost)
+            </td>
+        </tr>
     </tbody>
 </table>
 

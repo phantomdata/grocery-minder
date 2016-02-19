@@ -34,14 +34,19 @@ namespace GroceryMinder.Web.Controllers
         {
             // Give some fudge in case they decide to go shopping early
             var cutoffDate = DateTime.Today.AddDays(-3);
-
-            var vm = new Models.GroceryList.Index();
-
-            vm.GroceryList = groceryService.GetAll(UserId)
+            
+            var items = groceryService.GetAll(UserId)
                 .Where(g => g.NextPurchaseAt <= cutoffDate)
                 .OrderBy(g => g.GroceryCategory.Name)
-                .ThenBy(g => g.Name)
-                .ToList();
+                .ThenBy(g => g.Name);
+
+            var totalCost = items.Sum(g => g.AverageCost);
+
+            var vm = new Models.GroceryList.Index()
+            {
+                GroceryList = items.ToList(),
+                TotalCost = totalCost
+            };
 
             return View(vm);
         }

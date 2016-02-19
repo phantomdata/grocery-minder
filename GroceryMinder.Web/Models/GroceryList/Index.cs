@@ -8,5 +8,6 @@ namespace GroceryMinder.Web.Models.GroceryList
     public class Index
     {
         public IList<Domain.Models.Grocery> GroceryList { get; set; }
+        public int TotalCost { get; set; }
     }
 }
