@@ -20,6 +20,7 @@ namespace GroceryMinder.Service.Services
     {
         private readonly IGroceryRepository groceryItemRepository;
 
+        #region Public Methods
         public GroceryService(IGroceryRepository groceryItemRepository)
         {
             this.groceryItemRepository = groceryItemRepository;
@@ -27,6 +28,7 @@ namespace GroceryMinder.Service.Services
 
         public void Create(Grocery groceryItem)
         {
+            groceryItem = updateNextPurchaseDate(groceryItem);
             groceryItemRepository.Add(groceryItem);
             groceryItemRepository.Commit();
             return;
@@ -53,9 +55,37 @@ namespace GroceryMinder.Service.Services
 
         public void Update(Grocery groceryItem)
         {
+            groceryItem = updateNextPurchaseDate(groceryItem);
             groceryItemRepository.Update(groceryItem);
             groceryItemRepository.Commit();
             return;
         }
+        #endregion
+
+        #region Private Methods
+        public Grocery updateNextPurchaseDate(Grocery grocery)
+        {
+            switch(grocery.PurchaseFrequency)
+            {
+                case PurchaseFrequency.Weekly:
+                    grocery.NextPurchaseAt = grocery.LastPurchasedAt.AddDays(7);
+                    break;
+                case PurchaseFrequency.EveryTwoWeeks:
+                    grocery.NextPurchaseAt = grocery.LastPurchasedAt.AddDays(14);
+                    break;
+                case PurchaseFrequency.EveryMonth:
+                    grocery.NextPurchaseAt = grocery.LastPurchasedAt.AddMonths(1);
+                    break;
+                case PurchaseFrequency.EveryTwoMonths:
+                    grocery.NextPurchaseAt = grocery.LastPurchasedAt.AddMonths(2);
+                    break;
+                default:
+                    throw new Exception(string.Format("Invalid PurchaseFrequency ({0}) specified for grocery {1}.",
+                        grocery.PurchaseFrequency, grocery.Name));  
+            }
+
+            return grocery;
+        }
+        #endregion
     }
 }

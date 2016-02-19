@@ -14,8 +14,8 @@
         <tr>
             <th>Category</th>
             <th>Name</th>
-            <th>Frequency</th>
             <th>Last Purchased</th>
+            <th>Next Purchase</th>
             <th>&nbsp;</th>
         </tr>
     </thead>
@@ -25,8 +25,8 @@
             <tr>
                 <td>@groceryItem.GroceryCategory.Name</td>
                 <td>@groceryItem.Name</td>
-                <td>@Html.DisplayFor(m => groceryItem.PurchaseFrequency)</td>
                 <td>@groceryItem.LastPurchasedAt.ToShortDateString()</td>
+                <td>@groceryItem.NextPurchaseAt.ToShortDateString()</td>
                 <td class="actions-column">
                     @Html.ActionLink("📖", "Update", new { id = groceryItem.Id}, new { @class = "btn btn-default"})
                     @Html.ActionLink("␡", "Delete", new { id = groceryItem.Id }, new { @class = "btn btn-default delete" })

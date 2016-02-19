@@ -35,6 +35,10 @@ namespace GroceryMinder.Domain.Models
         [Required]
         public string Name { get; set; }
 
+        [Display(Name="Next Purchase Date")]
+        [Required]
+        public DateTime NextPurchaseAt { get; set; }
+
         public PurchaseFrequency PurchaseFrequency { get; set; }
     }
 
