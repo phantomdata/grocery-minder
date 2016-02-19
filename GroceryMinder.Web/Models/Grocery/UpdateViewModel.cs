@@ -43,6 +43,7 @@ namespace GroceryMinder.Web.Models.Grocery
         {
             Id = groceryItem.Id;
             GroceryCategoryId = groceryItem.GroceryCategoryId;
+            AverageCost = groceryItem.AverageCost;
             LastPurchasedAt = groceryItem.LastPurchasedAt;
             Name = groceryItem.Name;
             PurchaseFrequency = groceryItem.PurchaseFrequency;
@@ -53,6 +54,7 @@ namespace GroceryMinder.Web.Models.Grocery
         public Domain.Models.Grocery UpdatedGroceryItem(Domain.Models.Grocery item)
         {
             item.GroceryCategoryId = this.GroceryCategoryId;
+            item.AverageCost = this.AverageCost;
             item.LastPurchasedAt = this.LastPurchasedAt;
             item.Name = this.Name;
             item.PurchaseFrequency = this.PurchaseFrequency;
