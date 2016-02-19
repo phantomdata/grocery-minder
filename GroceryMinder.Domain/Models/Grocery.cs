@@ -26,6 +26,10 @@ namespace GroceryMinder.Domain.Models
         [Required]
         public int GroceryCategoryId { get; set; }
 
+        [Display(Name = "Average Cost")]
+        [Required]
+        public int AverageCost { get; set; }
+
         [Display(Name = "Last Purchased At")]
         [Required]
         public DateTime LastPurchasedAt { get; set; }

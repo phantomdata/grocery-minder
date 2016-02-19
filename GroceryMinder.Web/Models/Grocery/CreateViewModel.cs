@@ -17,6 +17,10 @@ namespace GroceryMinder.Web.Models.Grocery
         [Range(1,int.MaxValue, ErrorMessage = "You must provide a category")]
         public int GroceryCategoryId { get; set; }
 
+        [Display(Name = "Average Cost")]
+        [Required]
+        public int AverageCost { get; set; }
+
         [Display(Name="Last Purchased At")]
         [Required]
         public DateTime LastPurchasedAt { get; set; }

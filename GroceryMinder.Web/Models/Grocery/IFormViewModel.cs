@@ -12,6 +12,10 @@ namespace GroceryMinder.Web.Models.Grocery
     {
         int Id { get; set; }
 
+        [Display(Name="Average Cost")]
+        [Required]
+        int AverageCost { get; set; }
+
         [Display(Name="Last Purchased On")]
         DateTime LastPurchasedAt { get; set; }
 
