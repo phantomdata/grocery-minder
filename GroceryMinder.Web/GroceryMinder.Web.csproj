@@ -177,6 +177,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GroceryListController.cs" />
     <Compile Include="Controllers\GroceryCategoryController.cs" />
     <Compile Include="Controllers\GroceryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -186,6 +187,7 @@
     </Compile>
     <Compile Include="Models\Authentication\AccountViewModels.cs" />
     <Compile Include="Models\Authentication\ManageViewModels.cs" />
+    <Compile Include="Models\GroceryList\Index.cs" />
     <Compile Include="Models\GroceryCategory\CreateViewModel.cs" />
     <Compile Include="Models\GroceryCategory\IFormViewModel.cs" />
     <Compile Include="Models\GroceryCategory\UpdateViewModel.cs" />
@@ -261,6 +263,7 @@
     <Content Include="Views\GroceryCategory\Create.cshtml" />
     <Content Include="Views\GroceryCategory\Index.cshtml" />
     <Content Include="Views\GroceryCategory\Update.cshtml" />
+    <Content Include="Views\GroceryList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

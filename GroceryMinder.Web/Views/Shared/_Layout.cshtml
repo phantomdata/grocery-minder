@@ -13,6 +13,9 @@
                 <ul class="nav nav-pills pull-xs-right">
                     @if (Request.IsAuthenticated) {
                         <li class="nav-item">
+                            @Html.ActionLink("Grocery List", "Index", "GroceryList", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
                             @Html.ActionLink("Groceries", "Index", "Grocery", null, new { @class = "nav-link" } )
                         </li>
                         <li class="nav-item">

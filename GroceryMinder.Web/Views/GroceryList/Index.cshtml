@@ -1,0 +1,34 @@
+﻿@model GroceryMinder.Web.Models.GroceryList.Index
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page-header-container">
+    <h2>Grocery List</h2>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grocery in Model.GroceryList)
+        {
+            <tr>
+                <td>@grocery.GroceryCategory.Name</td>
+                <td>@grocery.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (Model.GroceryList.Count == 0)
+{
+    <div class="alert alert-info">
+        <p>You have no groceries to buy!  Looks like you're free and clear at the moment!</p>
+    </div>
+}

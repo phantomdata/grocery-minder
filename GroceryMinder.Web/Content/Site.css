@@ -42,6 +42,11 @@ input[type="submit"].full-width {
     line-height: 1em;
     font-size: 1.55em;
 }
+a.nav-muted {
+    color: #808080;
+    font-size: 73%;
+    line-height: 2.45em;
+}
 .page-header-container {
     margin-bottom: 25px;
     overflow:hidden;
