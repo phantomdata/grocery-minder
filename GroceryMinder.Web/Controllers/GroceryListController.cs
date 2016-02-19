@@ -20,19 +20,29 @@ namespace GroceryMinder.Web.Controllers
 
         public ActionResult Index()
         {
-            // Give some fudge in case they decide to go shopping early
-            var cutoffDate = DateTime.Today.AddDays(-3);
-            
+            // TODO: Factor this out
+            DateTime nextTripDate;
+            if (ApplicationUser.LastWentShoppingAt < DateTime.Now.AddDays(-7) || ApplicationUser.LastWentShoppingAt > DateTime.Now)
+            {
+                nextTripDate = DateTime.Now;
+            }
+            else {
+                nextTripDate = ApplicationUser.LastWentShoppingAt.AddDays(7); // Assume a weekly trip for now
+            }
+
+            var cutoff = nextTripDate.AddDays(2); // Give some fudge
             var items = groceryService.GetAll(UserId)
-                .Where(g => g.NextPurchaseAt <= cutoffDate)
-                .OrderBy(g => g.GroceryCategory.Name)
+                .Where(g => g.NextPurchaseAt <= cutoff)
+                .OrderBy(g => g.GroceryCategory.Priority)
                 .ThenBy(g => g.Name);
 
-            var totalCost = items.Sum(g => g.AverageCost);
+            var totalCost = items.Count() > 0 ? items.Sum(g => g.AverageCost) : 0;
 
             var vm = new Models.GroceryList.Index()
             {
                 GroceryList = items.ToList(),
+                LastWentShoppingAt = ApplicationUser.LastWentShoppingAt,
+                NextTripDate = nextTripDate,
                 TotalCost = totalCost
             };
 

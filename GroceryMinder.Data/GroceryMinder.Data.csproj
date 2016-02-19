@@ -103,6 +103,10 @@
     <Compile Include="Migrations\201602190615269_Add AverageCost to Groceries.Designer.cs">
       <DependentUpon>201602190615269_Add AverageCost to Groceries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602190647235_Add LastWentShoppingAt to ApplicationUser.cs" />
+    <Compile Include="Migrations\201602190647235_Add LastWentShoppingAt to ApplicationUser.Designer.cs">
+      <DependentUpon>201602190647235_Add LastWentShoppingAt to ApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GroceryCategoryRepository.cs" />
@@ -148,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602190615269_Add AverageCost to Groceries.resx">
       <DependentUpon>201602190615269_Add AverageCost to Groceries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602190647235_Add LastWentShoppingAt to ApplicationUser.resx">
+      <DependentUpon>201602190647235_Add LastWentShoppingAt to ApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

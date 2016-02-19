@@ -4,8 +4,16 @@
     ViewBag.Title = "Index";
 }
 
-<div class="page-header-container">
-    <h2>Grocery List</h2>
+<div class="row">
+    <div class="col-sm-3 page-header-container">
+        <h2>Grocery List</h2>
+    </div>
+    <div class="col-sm-9" style="text-align:right;">
+        @using (Html.BeginForm("UpdateLastWentShoppingAt", "ApplicationUser", FormMethod.Post))
+        {
+            <p>You last went shopping on @Html.TextBoxFor(model => model.LastWentShoppingAt, "{0:yyyy-MM-dd}", new { @class = "", type = "date" }) <input type="submit" value="Update" class="btn btn-primary" /></p>
+        }
+    </div>
 </div>
 
 <table class="table table-striped">
@@ -26,9 +34,8 @@
             </tr>
         }
         <tr>
-            <td>&nbsp;</td>
-            <td style="text-align:right;">
-                <strong>Expected Total Cost</strong>
+            <td colspan="2" style="text-align:right;">
+                Your next trip is on @Model.NextTripDate.ToShortDateString() and has an <strong>Expected Total Cost</strong>
             </td>
             <td>
                 $@string.Format("{0:0.00}", Model.TotalCost)
