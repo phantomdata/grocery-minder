@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace GroceryMinder.Web.Controllers
 {
+    [Authorize]
     public class GroceryListController : BaseController
     {
 
