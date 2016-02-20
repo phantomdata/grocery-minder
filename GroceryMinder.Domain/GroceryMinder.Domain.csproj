@@ -60,6 +60,7 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\GroceryCategory.cs" />
     <Compile Include="Models\Grocery.cs" />
+    <Compile Include="Models\GroceryList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

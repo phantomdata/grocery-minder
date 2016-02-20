@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationUserController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\GroceryListController.cs" />
     <Compile Include="Controllers\GroceryCategoryController.cs" />
     <Compile Include="Controllers\GroceryController.cs" />
@@ -271,6 +272,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\ApplicationUser\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Email\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
