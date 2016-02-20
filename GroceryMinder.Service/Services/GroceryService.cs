@@ -14,7 +14,7 @@ namespace GroceryMinder.Service.Services
         void Delete(Grocery item);
         Grocery Get(string userId, int itemId);
         IQueryable<Grocery> GetAll(string userId);
-        void Update(Grocery item);
+        void Update(Grocery item, bool autoCommit = false);
     }
     public class GroceryService : IGroceryService
     {
@@ -53,17 +53,17 @@ namespace GroceryMinder.Service.Services
             return ret;
         }
 
-        public void Update(Grocery groceryItem)
+        public void Update(Grocery groceryItem, bool autoCommit = true)
         {
             groceryItem = updateNextPurchaseDate(groceryItem);
             groceryItemRepository.Update(groceryItem);
-            groceryItemRepository.Commit();
+            if (autoCommit) groceryItemRepository.Commit();
             return;
         }
         #endregion
 
         #region Private Methods
-        public Grocery updateNextPurchaseDate(Grocery grocery)
+        private Grocery updateNextPurchaseDate(Grocery grocery)
         {
             switch(grocery.PurchaseFrequency)
             {

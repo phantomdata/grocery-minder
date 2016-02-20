@@ -24,8 +24,13 @@ namespace GroceryMinder.Service.Services
         public GroceryList Get(ApplicationUser applicationUser, string applicationUserId)
         {
             var nextTripDate = applicationUser.NextShoppingTripAt;
+            var delta = (nextTripDate - DateTime.Now).Days;
 
-            var cutoff = nextTripDate.AddDays(2); // Give some fudge
+            var fudgeFactor = 0;
+            if (delta < 3) fudgeFactor = 2;
+            if (delta < 2) fudgeFactor = 3;
+
+            var cutoff = nextTripDate.AddDays(fudgeFactor);
             var items = groceryService.GetAll(applicationUserId)
                 .Where(g => g.NextPurchaseAt <= cutoff)
                 .OrderBy(g => g.GroceryCategory.Priority)
