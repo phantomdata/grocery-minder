@@ -107,6 +107,10 @@
     <Compile Include="Migrations\201602190647235_Add LastWentShoppingAt to ApplicationUser.Designer.cs">
       <DependentUpon>201602190647235_Add LastWentShoppingAt to ApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602200430201_Add NextShoppingTripAt to ApplicationUsers.cs" />
+    <Compile Include="Migrations\201602200430201_Add NextShoppingTripAt to ApplicationUsers.Designer.cs">
+      <DependentUpon>201602200430201_Add NextShoppingTripAt to ApplicationUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GroceryCategoryRepository.cs" />
@@ -155,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602190647235_Add LastWentShoppingAt to ApplicationUser.resx">
       <DependentUpon>201602190647235_Add LastWentShoppingAt to ApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602200430201_Add NextShoppingTripAt to ApplicationUsers.resx">
+      <DependentUpon>201602200430201_Add NextShoppingTripAt to ApplicationUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

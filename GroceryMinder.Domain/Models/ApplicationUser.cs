@@ -21,5 +21,6 @@ namespace GroceryMinder.Domain.Models
         public virtual ICollection<Grocery> GroceryItems { get; set; }
 
         public DateTime LastWentShoppingAt { get; set; }
+        public DateTime NextShoppingTripAt { get; set; }
     }
 }

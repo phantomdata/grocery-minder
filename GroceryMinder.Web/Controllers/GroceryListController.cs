@@ -11,7 +11,7 @@ namespace GroceryMinder.Web.Controllers
     [Authorize]
     public class GroceryListController : BaseController
     {
-        public readonly IApplicationUserService applicationUserService;
+        private readonly IApplicationUserService applicationUserService;
         private readonly IGroceryService groceryService;
 
         public GroceryListController(IApplicationUserService applicationUserService, IGroceryService groceryService)
@@ -22,7 +22,7 @@ namespace GroceryMinder.Web.Controllers
 
         public ActionResult Index()
         {
-            var nextTripDate = applicationUserService.GetNextTripDate(ApplicationUser);
+            var nextTripDate = ApplicationUser.NextShoppingTripAt;
 
             var cutoff = nextTripDate.AddDays(2); // Give some fudge
             var items = groceryService.GetAll(UserId)
