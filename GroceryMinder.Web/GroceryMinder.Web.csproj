@@ -185,6 +185,7 @@
     <Compile Include="Controllers\GroceryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingTokenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -271,8 +272,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ApplicationUser\" />
-    <Folder Include="Views\Base\" />
-    <Folder Include="Views\Email\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

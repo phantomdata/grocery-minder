@@ -46,6 +46,7 @@
     <Compile Include="Services\GroceryCategoryService.cs" />
     <Compile Include="Services\GroceryListService.cs" />
     <Compile Include="Services\GroceryService.cs" />
+    <Compile Include="Services\ShoppingTokenService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

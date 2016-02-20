@@ -15,8 +15,14 @@ namespace GroceryMinder.Web.Controllers
         private IApplicationUserService applicationUserService;
         private IEmailService emailService;
         private IGroceryListService groceryListService;
+        private IShoppingTokenService shoppingTokenService;
 
-        public EmailController(IApplicationUserService applicationUserService, IEmailService emailService, IGroceryListService groceryService)
+        public EmailController(
+            IApplicationUserService applicationUserService,
+            IEmailService emailService, 
+            IGroceryListService groceryListService,
+            IShoppingTokenService shoppingTokenService
+        )
         {
             this.applicationUserService = applicationUserService;
 
@@ -24,7 +30,8 @@ namespace GroceryMinder.Web.Controllers
             emailService.Configure(cfg["smtpServer"], cfg["smtpPort"], cfg["smtpUsername"], cfg["smtpPassword"]);
 
             this.emailService = emailService;
-            this.groceryListService = groceryService;
+            this.groceryListService = groceryListService;
+            this.shoppingTokenService = shoppingTokenService;
         }
 
         public ActionResult SendShoppingLists()
@@ -37,7 +44,8 @@ namespace GroceryMinder.Web.Controllers
             foreach (var user in users)
             {
                 var groceryList = groceryListService.Get(ApplicationUser, UserId);
-                emailService.SendShoppingList(user.Email, groceryList);
+                var shoppingToken = shoppingTokenService.Create(user.Id);
+                emailService.SendShoppingList(user.Email, groceryList, "");
             }
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
