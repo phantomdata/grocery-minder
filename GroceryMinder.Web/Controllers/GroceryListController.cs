@@ -12,32 +12,23 @@ namespace GroceryMinder.Web.Controllers
     public class GroceryListController : BaseController
     {
         private readonly IApplicationUserService applicationUserService;
-        private readonly IGroceryService groceryService;
+        private readonly IGroceryListService groceryListService;
 
-        public GroceryListController(IApplicationUserService applicationUserService, IGroceryService groceryService)
+        public GroceryListController(IApplicationUserService applicationUserService, IGroceryListService groceryListService)
         {
             this.applicationUserService = applicationUserService;
-            this.groceryService = groceryService;
+            this.groceryListService = groceryListService;
         }
 
         public ActionResult Index()
         {
             var nextTripDate = ApplicationUser.NextShoppingTripAt;
-
-            var cutoff = nextTripDate.AddDays(2); // Give some fudge
-            var items = groceryService.GetAll(UserId)
-                .Where(g => g.NextPurchaseAt <= cutoff)
-                .OrderBy(g => g.GroceryCategory.Priority)
-                .ThenBy(g => g.Name);
-
-            var totalCost = items.Count() > 0 ? items.Sum(g => g.AverageCost) : 0;
+            var groceryList = groceryListService.Get(ApplicationUser, UserId);
 
             var vm = new Models.GroceryList.Index()
             {
-                GroceryList = items.ToList(),
-                LastWentShoppingAt = ApplicationUser.LastWentShoppingAt,
-                NextTripDate = nextTripDate,
-                TotalCost = totalCost
+                GroceryList = groceryList,
+                LastWentShoppingAt = ApplicationUser.LastWentShoppingAt
             };
 
             return View(vm);

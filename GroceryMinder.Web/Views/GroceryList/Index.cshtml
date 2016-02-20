@@ -25,7 +25,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var grocery in Model.GroceryList)
+        @foreach (var grocery in Model.GroceryList.Groceries)
         {
             <tr>
                 <td>@grocery.GroceryCategory.Name</td>
@@ -35,16 +35,16 @@
         }
         <tr>
             <td colspan="2" style="text-align:right;">
-                Your next trip is on @Model.NextTripDate.ToShortDateString() and has an <strong>expected total cost</strong> of
+                Your next trip is on @Model.GroceryList.Date.ToShortDateString() and has an <strong>expected total cost</strong> of
             </td>
             <td>
-                $@string.Format("{0:0.00}", Model.TotalCost)
+                $@string.Format("{0:0.00}", Model.GroceryList.TotalCost)
             </td>
         </tr>
     </tbody>
 </table>
 
-@if (Model.GroceryList.Count == 0)
+@if (Model.GroceryList.Groceries.Count == 0)
 {
     <div class="alert alert-info">
         <p>You have no groceries to buy!  Looks like you're free and clear at the moment!</p>
