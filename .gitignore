@@ -238,3 +238,4 @@ _Pvt_Extensions
 
 *Web.Secret.Config*
 *ConnectionStrings.secret.Config*
+*AppSettings.Secret.Config*

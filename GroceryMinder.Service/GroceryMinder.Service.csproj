@@ -44,6 +44,7 @@
     <Compile Include="Services\ApplicationUserService.cs" />
     <Compile Include="Services\EmailService.cs" />
     <Compile Include="Services\GroceryCategoryService.cs" />
+    <Compile Include="Services\GroceryListService.cs" />
     <Compile Include="Services\GroceryService.cs" />
   </ItemGroup>
   <ItemGroup />
