@@ -11,25 +11,18 @@ namespace GroceryMinder.Web.Controllers
     [Authorize]
     public class GroceryListController : BaseController
     {
-
+        public readonly IApplicationUserService applicationUserService;
         private readonly IGroceryService groceryService;
 
-        public GroceryListController(IGroceryService groceryService)
+        public GroceryListController(IApplicationUserService applicationUserService, IGroceryService groceryService)
         {
+            this.applicationUserService = applicationUserService;
             this.groceryService = groceryService;
         }
 
         public ActionResult Index()
         {
-            // TODO: Factor this out
-            DateTime nextTripDate;
-            if (ApplicationUser.LastWentShoppingAt < DateTime.Now.AddDays(-7) || ApplicationUser.LastWentShoppingAt > DateTime.Now)
-            {
-                nextTripDate = DateTime.Now;
-            }
-            else {
-                nextTripDate = ApplicationUser.LastWentShoppingAt.AddDays(7); // Assume a weekly trip for now
-            }
+            var nextTripDate = applicationUserService.GetNextTripDate(ApplicationUser);
 
             var cutoff = nextTripDate.AddDays(2); // Give some fudge
             var items = groceryService.GetAll(UserId)
