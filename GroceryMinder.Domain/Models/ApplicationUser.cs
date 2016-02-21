@@ -2,6 +2,8 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -17,10 +19,39 @@ namespace GroceryMinder.Domain.Models
             return userIdentity;
         }
 
+
         public virtual ICollection<GroceryCategory> GroceryCategories { get; set; }
         public virtual ICollection<Grocery> GroceryItems { get; set; }
 
-        public DateTime LastWentShoppingAt { get; set; }
-        public DateTime NextShoppingTripAt { get; set; }
+
+        private DateTime? lastWentShoppingAt;
+        [Required]
+        public DateTime LastWentShoppingAt
+        {
+            get
+            {
+                if (lastWentShoppingAt == null)
+                {
+                    lastWentShoppingAt = DateTime.Now;
+                }
+                return lastWentShoppingAt.Value;
+            }
+            set { lastWentShoppingAt = value; }
+        }
+
+        private DateTime? nextShoppingTripAt;
+        [Required]
+        public DateTime NextShoppingTripAt
+        {
+            get
+            {
+                if (nextShoppingTripAt == null)
+                {
+                    nextShoppingTripAt = DateTime.Now;
+                }
+                return nextShoppingTripAt.Value;
+            }
+            set { nextShoppingTripAt = value; }
+        }
     }
 }
