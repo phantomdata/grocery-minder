@@ -63,61 +63,9 @@
     <Compile Include="Infrastructure\IDbFactory.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
-    <Compile Include="Migrations\201602170522208_Initial migration after reset of id casings.cs" />
-    <Compile Include="Migrations\201602170522208_Initial migration after reset of id casings.Designer.cs">
-      <DependentUpon>201602170522208_Initial migration after reset of id casings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.cs" />
-    <Compile Include="Migrations\201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.Designer.cs">
-      <DependentUpon>201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180427211_Add GroceryCategories.cs" />
-    <Compile Include="Migrations\201602180427211_Add GroceryCategories.Designer.cs">
-      <DependentUpon>201602180427211_Add GroceryCategories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180448448_Add Priority Field to GroceryCategories.cs" />
-    <Compile Include="Migrations\201602180448448_Add Priority Field to GroceryCategories.Designer.cs">
-      <DependentUpon>201602180448448_Add Priority Field to GroceryCategories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180521131_Rename GroceryItem to Grocery.cs" />
-    <Compile Include="Migrations\201602180521131_Rename GroceryItem to Grocery.Designer.cs">
-      <DependentUpon>201602180521131_Rename GroceryItem to Grocery.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180534546_Rename GroceryItemId to Id in Groceries.cs" />
-    <Compile Include="Migrations\201602180534546_Rename GroceryItemId to Id in Groceries.Designer.cs">
-      <DependentUpon>201602180534546_Rename GroceryItemId to Id in Groceries.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.cs" />
-    <Compile Include="Migrations\201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.Designer.cs">
-      <DependentUpon>201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180541498_Adding relationship between Groceries and GroceryCategories.cs" />
-    <Compile Include="Migrations\201602180541498_Adding relationship between Groceries and GroceryCategories.Designer.cs">
-      <DependentUpon>201602180541498_Adding relationship between Groceries and GroceryCategories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602190510330_Add NextPurchaseDate to Groceries.cs" />
-    <Compile Include="Migrations\201602190510330_Add NextPurchaseDate to Groceries.Designer.cs">
-      <DependentUpon>201602190510330_Add NextPurchaseDate to Groceries.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602190615269_Add AverageCost to Groceries.cs" />
-    <Compile Include="Migrations\201602190615269_Add AverageCost to Groceries.Designer.cs">
-      <DependentUpon>201602190615269_Add AverageCost to Groceries.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602190647235_Add LastWentShoppingAt to ApplicationUser.cs" />
-    <Compile Include="Migrations\201602190647235_Add LastWentShoppingAt to ApplicationUser.Designer.cs">
-      <DependentUpon>201602190647235_Add LastWentShoppingAt to ApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602200430201_Add NextShoppingTripAt to ApplicationUsers.cs" />
-    <Compile Include="Migrations\201602200430201_Add NextShoppingTripAt to ApplicationUsers.Designer.cs">
-      <DependentUpon>201602200430201_Add NextShoppingTripAt to ApplicationUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602200658531_Create GroceryListCompletionTokens.cs" />
-    <Compile Include="Migrations\201602200658531_Create GroceryListCompletionTokens.Designer.cs">
-      <DependentUpon>201602200658531_Create GroceryListCompletionTokens.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602200706207_Rename GroceryListCompletionTokens to CompletionTokens.cs" />
-    <Compile Include="Migrations\201602200706207_Rename GroceryListCompletionTokens to CompletionTokens.Designer.cs">
-      <DependentUpon>201602200706207_Rename GroceryListCompletionTokens to CompletionTokens.cs</DependentUpon>
+    <Compile Include="Migrations\201602210325569_Initial Migration.cs" />
+    <Compile Include="Migrations\201602210325569_Initial Migration.Designer.cs">
+      <DependentUpon>201602210325569_Initial Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,47 +85,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602170522208_Initial migration after reset of id casings.resx">
-      <DependentUpon>201602170522208_Initial migration after reset of id casings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.resx">
-      <DependentUpon>201602180057336_Add LastPurchasedAt and PurchaseFrequency to GroceryItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180427211_Add GroceryCategories.resx">
-      <DependentUpon>201602180427211_Add GroceryCategories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180448448_Add Priority Field to GroceryCategories.resx">
-      <DependentUpon>201602180448448_Add Priority Field to GroceryCategories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180521131_Rename GroceryItem to Grocery.resx">
-      <DependentUpon>201602180521131_Rename GroceryItem to Grocery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180534546_Rename GroceryItemId to Id in Groceries.resx">
-      <DependentUpon>201602180534546_Rename GroceryItemId to Id in Groceries.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.resx">
-      <DependentUpon>201602180537220_Rename GroceryCategoryId to Id in GroceryCategories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180541498_Adding relationship between Groceries and GroceryCategories.resx">
-      <DependentUpon>201602180541498_Adding relationship between Groceries and GroceryCategories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602190510330_Add NextPurchaseDate to Groceries.resx">
-      <DependentUpon>201602190510330_Add NextPurchaseDate to Groceries.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602190615269_Add AverageCost to Groceries.resx">
-      <DependentUpon>201602190615269_Add AverageCost to Groceries.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602190647235_Add LastWentShoppingAt to ApplicationUser.resx">
-      <DependentUpon>201602190647235_Add LastWentShoppingAt to ApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602200430201_Add NextShoppingTripAt to ApplicationUsers.resx">
-      <DependentUpon>201602200430201_Add NextShoppingTripAt to ApplicationUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602200658531_Create GroceryListCompletionTokens.resx">
-      <DependentUpon>201602200658531_Create GroceryListCompletionTokens.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602200706207_Rename GroceryListCompletionTokens to CompletionTokens.resx">
-      <DependentUpon>201602200706207_Rename GroceryListCompletionTokens to CompletionTokens.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602210325569_Initial Migration.resx">
+      <DependentUpon>201602210325569_Initial Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

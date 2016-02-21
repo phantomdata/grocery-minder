@@ -7,13 +7,13 @@ namespace GroceryMinder.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class RenameGroceryItemtoGrocery : IMigrationMetadata
+    public sealed partial class InitialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RenameGroceryItemtoGrocery));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602180521131_Rename GroceryItem to Grocery"; }
+            get { return "201602210325569_Initial Migration"; }
         }
         
         string IMigrationMetadata.Source
